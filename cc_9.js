@@ -83,5 +83,25 @@ class Company {
 // Test Case
 console.log(company.calculateTotalPayroll()); // Expected output: 165600
 
+//TASK 5: Implementing Promotions
+
+class Company {
+  // Previous methods remain unchanged
+
+  promoteToManager(employee, teamSize) {
+      const index = this.employees.indexOf(employee);
+      if (index !== -1) {
+          const newManager = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+          this.employees[index] = newManager;
+      }
+  }
+}
+
+// Test Case
+company.promoteToManager(emp1, 3);
+company.listEmployees(); // Expected output
+
+
+
 
 
