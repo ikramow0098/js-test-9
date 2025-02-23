@@ -66,5 +66,22 @@ company.addEmployee(emp1);
 company.addEmployee(mgr1);
 company.listEmployees(); // Expected output
 
+//TASK 4: Implementing the Payroll System
+
+class Company {
+  // Previous constructor and methods remain unchanged
+
+  calculateTotalPayroll() {
+      let total = 0;
+      this.employees.forEach(emp => {
+          total += (emp instanceof Manager) ? emp.calculateAnnualSalary() + emp.calculateBonus() : emp.calculateAnnualSalary();
+      });
+      return total;
+  }
+}
+
+// Test Case
+console.log(company.calculateTotalPayroll()); // Expected output: 165600
+
 
 
